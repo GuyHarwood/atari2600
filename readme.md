@@ -1,2 +1,4 @@
-code written while taking https://www.udemy.com/course/programming-games-for-the-atari-2600
+#Atari 2600 Assembler
+
+code written while learning atari 2600 assembler with 6502 instruction set.
 
