@@ -20,4 +20,10 @@ memloop:
   sta $0,X          ; store A register at address $0 + X
   dex               ; X--
   bne memloop       ; loop until X==0 (z-flag set)
-  
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Fill ROM size to exactly 4KB
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  org $FFFC
+  .word start       ; reset vector at $FFFC (where program starts)
+  .word start       ; interrupt vector at $FFFE (unused in VCS)
