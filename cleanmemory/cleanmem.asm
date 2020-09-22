@@ -15,10 +15,11 @@ start:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   lda #0            ; A = 0
   ldx #$FF          ; X = #$FF
+  sta $FF           ; make sure $FF is zeroed before loop start
 
 memloop:
-  sta $0,X          ; store A register at address $0 + X
   dex               ; X--
+  sta $0,X          ; store A register at address $0 + X
   bne memloop       ; loop until X==0 (z-flag set)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
