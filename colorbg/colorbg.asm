@@ -1,3 +1,5 @@
+  ; NTSC format
+  
   processor 6502
 
   include "vcs.h"
@@ -10,7 +12,7 @@ START:
   ;CLEAN_START             ; macro to safely clear the memory
 
 ; Set background  https://en.wikipedia.org/wiki/List_of_video_game_console_palettes#Atari_2600
-  lda #$9C                ; light blue PAL (9,12) = 9C
+  lda #$9C                ; light blue NTSC (9,12) = 9C
   sta COLUBK              ; store A to bg color address ($09)
 
   jmp START               ; repeat from start
